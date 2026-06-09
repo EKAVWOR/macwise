@@ -6,7 +6,7 @@ const WhyChooseUs = () => {
     {
       icon: Shield,
       title: 'Trusted & Safe',
-      description: 'Licensed operator with 25+ years of safe travel operations worldwide',
+      description: 'Licensed operator with 9+ years of safe travel operations worldwide',
       gradient: 'from-primary-500 to-orange-600',
       delay: 0
     },
@@ -23,20 +23,6 @@ const WhyChooseUs = () => {
       description: 'Round-the-clock assistance from our travel experts anywhere',
       gradient: 'from-orange-500 to-pink-600',
       delay: 0.2
-    },
-    {
-      icon: Award,
-      title: 'Award Winning',
-      description: 'Recognized as Best Tour Operator 2023 by World Travel Awards',
-      gradient: 'from-purple-500 to-primary-500',
-      delay: 0.3
-    },
-    {
-      icon: Globe,
-      title: '150+ Destinations',
-      description: 'Access to exclusive locations across 6 continents',
-      gradient: 'from-primary-600 to-secondary-600',
-      delay: 0.4
     },
     {
       icon: Heart,
@@ -59,15 +45,15 @@ const WhyChooseUs = () => {
               We Make Your Travel <span className="gradient-text">Extraordinary</span>
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              With over 50,000 happy travelers, we're not just booking trips—we're crafting life-changing experiences with unmatched attention to detail.
+              Our approach is rooted in professionalism, integrity, and attention to detail, ensuring that clients receive accurate guidance and efficient service delivery. We leverage industry expertise and a client-focused strategy to support seamless travel experiences while maintaining the highest standards of compliance and service excellence.
             </p>
 
             <div className="space-y-6">
               {[
-                'Handpicked luxury accommodations',
-                'Local expert guides in every destination',
-                'Flexible booking with free cancellation',
-                'Sustainable and responsible tourism'
+                'We operate with honesty, transparency, and strong ethical standards in all our dealings.',
+                'We are committed to delivering top-quality services with attention to detail',
+                'Our clients are at the heart of everything we do.',
+                'We keep our promises and deliver on time. Clients can depend on us for accurate information'
               ].map((item, i) => (
                 <motion.div
                   key={i}

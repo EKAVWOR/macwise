@@ -1,25 +1,25 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, Clock } from 'lucide-react';
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
   const quickLinks = [
     { name: 'About Us', path: '/about' },
-    { name: 'Destinations', path: '/destinations' },
-    { name: 'Tours', path: '/tours' },
+    { name: 'Our Packages', path: '/packages' },
     { name: 'Gallery', path: '/gallery' },
-    { name: 'Blog', path: '/blog' },
+    { name: 'Testimonies', path: '/testimonies' },
+    { name: 'News & Updates', path: '/news' },
     { name: 'Contact', path: '/contact' },
   ];
 
-  const popularDestinations = [
-    'Paris, France',
-    'Bali, Indonesia',
-    'Dubai, UAE',
-    'Tokyo, Japan',
-    'New York, USA',
-    'Maldives',
+  const ourServices = [
+    { name: 'Flight Bookings', path: '/services/flights' },
+    { name: 'Customized Tours', path: '/services/tours' },
+    { name: 'Hotel Reservations', path: '/services/hotels' },
+    { name: 'Travel Insurance', path: '/services/insurance' },
+    { name: 'Vacation Packages', path: '/services/packages' },
+    { name: 'Visa Procurement', path: '/services/visa' },
   ];
 
   const socialLinks = [
@@ -51,15 +51,15 @@ const Footer = () => {
               </span>
               Travels
             </h3>
-            <p className="text-gray-400 mb-6 leading-relaxed">
+            <p className="text-gray-400 mb-6 leading-relaxed text-sm">
               Macwise Travels Ltd is a professional travel and visa consultancy
-              firm headquartered in Abuja. The company provides comprehensive
-              travel management services, including visa advisory, flight
-              reservations, travel documentation, and consultancy services for
-              individuals, corporate organizations, and government clients.
+              firm headquartered in Abuja. We provide comprehensive travel
+              management services, including visa advisory, flight reservations,
+              and travel documentation for individuals, corporate organizations,
+              and government clients.
             </p>
 
-            {/* Social Icons - Using React Icons */}
+            {/* Social Icons */}
             <div className="flex gap-3">
               {socialLinks.map(({ name, Icon, url }) => (
                 <motion.a
@@ -94,7 +94,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-[#FF8C42] transition flex items-center gap-2 group"
+                    className="text-gray-400 hover:text-[#FF8C42] transition flex items-center gap-2 group text-sm"
                   >
                     <span className="w-0 h-0.5 bg-[#FF8C42] group-hover:w-4 transition-all"></span>
                     {link.name}
@@ -104,7 +104,7 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Popular Destinations */}
+          {/* Our Services */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -112,19 +112,19 @@ const Footer = () => {
             transition={{ delay: 0.2 }}
           >
             <h4 className="text-xl font-bold mb-6 relative inline-block">
-              Popular Destinations
+              Our Services
               <span className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-[#7B2CBF] to-[#FF8C42] rounded-full"></span>
             </h4>
             <ul className="space-y-3">
-              {popularDestinations.map((destination) => (
-                <li key={destination}>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-[#9D4EDD] transition flex items-center gap-2 group"
+              {ourServices.map((service) => (
+                <li key={service.name}>
+                  <Link
+                    to={service.path}
+                    className="text-gray-400 hover:text-[#9D4EDD] transition flex items-center gap-2 group text-sm"
                   >
-                    <MapPin size={14} className="text-[#FF8C42] group-hover:text-[#9D4EDD] transition-colors" />
-                    {destination}
-                  </a>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#FF8C42] group-hover:bg-[#9D4EDD] group-hover:scale-150 transition-all"></span>
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -142,28 +142,44 @@ const Footer = () => {
               <span className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-[#7B2CBF] to-[#FF8C42] rounded-full"></span>
             </h4>
             <div className="space-y-4 mb-6">
+              {/* Address */}
+              <div className="flex items-start gap-3 text-gray-400 text-sm">
+                <div className="w-10 h-10 rounded-lg bg-[#9D4EDD]/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin size={18} className="text-[#9D4EDD]" />
+                </div>
+                <span className="pt-2">Abuja, Nigeria</span>
+              </div>
+
+              {/* Phone */}
               <a
                 href="tel:+2348052676836"
-                className="flex items-center gap-3 text-gray-400 hover:text-[#FF8C42] transition group"
+                className="flex items-center gap-3 text-gray-400 hover:text-[#FF8C42] transition group text-sm"
               >
                 <div className="w-10 h-10 rounded-lg bg-[#FF8C42]/10 flex items-center justify-center group-hover:bg-[#FF8C42]/20 transition-colors">
                   <Phone size={18} className="text-[#FF8C42]" />
                 </div>
                 08052676836
               </a>
+
+              {/* Email */}
               <a
                 href="mailto:macwisetravelsltd@gmail.com"
-                className="flex items-center gap-3 text-gray-400 hover:text-[#9D4EDD] transition group"
+                className="flex items-center gap-3 text-gray-400 hover:text-[#9D4EDD] transition group text-sm"
               >
                 <div className="w-10 h-10 rounded-lg bg-[#7B2CBF]/10 flex items-center justify-center group-hover:bg-[#7B2CBF]/20 transition-colors">
                   <Mail size={18} className="text-[#9D4EDD]" />
                 </div>
-                <span className="break-all text-sm">macwisetravelsltd@gmail.com</span>
+                <span className="break-all">macwisetravelsltd@gmail.com</span>
               </a>
+
+              
             </div>
 
+            {/* Newsletter */}
             <div>
-              <p className="text-gray-400 mb-3">Subscribe to our newsletter</p>
+              <p className="text-gray-400 mb-3 text-sm font-medium">
+                Subscribe to our newsletter
+              </p>
               <div className="flex gap-2">
                 <input
                   type="email"

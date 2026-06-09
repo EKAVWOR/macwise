@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, MapPin, Users, ChevronRight } from 'lucide-react';
+import { MapPin, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/LOGO.png';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,27 +9,28 @@ const Hero = () => {
 
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=80',
+      image:
+        'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&q=80',
       title: 'Explore Paradise Islands',
       subtitle: "Discover the world's most beautiful destinations",
       location: 'Maldives',
     },
     {
-      image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1920&q=80',
+      image:
+        'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1920&q=80',
       title: 'European Adventures',
       subtitle: 'Immerse yourself in rich culture and history',
       location: 'Paris, France',
     },
     {
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80',
+      image:
+        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80',
       title: 'Mountain Escapes',
       subtitle: 'Experience breathtaking alpine landscapes',
       location: 'Swiss Alps',
     },
   ];
 
-  // ✅ Bug 1 Fixed: Changed `  , [isPaused` to `}, [isPaused` 
-  // and closed properly with `});` instead of `);`
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
@@ -38,10 +38,11 @@ const Hero = () => {
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [isPaused, slides.length]); // <-- was: `  , [isPaused, slides.length]);`
+  }, [isPaused, slides.length]);
 
   return (
     <div
+      // ✅ Push hero down by navbar height (~120px) so it doesn't sit under it
       className="relative h-screen overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -64,20 +65,10 @@ const Hero = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Content Container */}
-      <div className="relative h-full flex flex-col justify-center items-center px-4">
-        {/* Logo */}
-        <div className="absolute top-6 left-0 right-0 z-20">
-          <div className="max-w-7xl mx-auto">
-            <Link to="/">
-              <img
-                src={logo}
-                alt="Macwise Travels Ltd."
-                className="h-16 w-auto object-contain"
-              />
-            </Link>
-          </div>
-        </div>
+      {/* ✅ Content Container — pushed below navbar with pt-32 */}
+      <div className="relative h-full flex flex-col justify-center items-center px-4 pt-32 pb-20">
+        
+        {/* ❌ REMOVED duplicate logo — your Navbar already has it */}
 
         {/* Main Content */}
         <div className="max-w-4xl w-full text-center z-10">
@@ -109,7 +100,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight drop-shadow-2xl"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl"
               >
                 {slides[currentSlide].title}
               </motion.h1>
@@ -119,7 +110,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl md:text-2xl text-gray-100 mb-4 max-w-2xl mx-auto drop-shadow-lg"
+                className="text-lg md:text-2xl text-gray-100 mb-4 max-w-2xl mx-auto drop-shadow-lg"
               >
                 {slides[currentSlide].subtitle}
               </motion.p>
@@ -163,7 +154,7 @@ const Hero = () => {
               </motion.div>
             </motion.div>
           </AnimatePresence>
-        </div> {/* ✅ Bug 2 Fixed: Added missing closing tag for "Main Content" div */}
+        </div>
 
         {/* Slide Indicators */}
         <div className="absolute bottom-8 right-8 flex flex-col gap-3 z-20">

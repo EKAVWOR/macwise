@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Send, Clock } from 'lucide-react';
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaLinkedinIn} from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -23,10 +23,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', Icon: FaFacebookF, url: 'https://facebook.com/macwisetravels' },
-    { name: 'Instagram', Icon: FaInstagram, url: 'https://instagram.com/macwisetravels' },
-    { name: 'Twitter', Icon: FaTwitter, url: 'https://twitter.com/macwisetravels' },
-    { name: 'YouTube', Icon: FaYoutube, url: 'https://youtube.com/@macwisetravels' },
+    { name: 'Facebook', Icon: FaFacebookF, url: 'https://www.facebook.com/61571631222763/?locale=en_GB' },
+    { name: 'Instagram', Icon: FaInstagram, url: 'https://www.instagram.com/macwisetravels/' },
+    { name: 'LinkedIn', Icon: FaLinkedinIn, url: 'https://ng.linkedin.com/in/mary-ani-08382a148' },
+    
   ];
 
   return (

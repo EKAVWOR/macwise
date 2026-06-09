@@ -380,23 +380,19 @@ const Contact = () => {
                     {
                       Icon: FaFacebookF,
                       color: 'bg-[#1877F2]',
-                      link: '#',
+                      link: 'https://www.facebook.com/61571631222763/?locale=en_GB',
                     },
                     {
                       Icon: FaInstagram,
                       color:
                         'bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045]',
-                      link: '#',
+                      link: 'https://www.instagram.com/macwisetravels/',
                     },
-                    {
-                      Icon: FaTwitter,
-                      color: 'bg-[#1DA1F2]',
-                      link: '#',
-                    },
+  
                     {
                       Icon: FaLinkedinIn,
                       color: 'bg-[#0A66C2]',
-                      link: '#',
+                      link: 'https://ng.linkedin.com/in/mary-ani-08382a148',
                     },
                   ].map(({ Icon, color, link }, i) => (
                     <motion.a

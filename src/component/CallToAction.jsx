@@ -75,13 +75,13 @@ const CallToAction = () => {
                   Contact Us Now
                 </motion.button>
               </Link>
-              <Link to="/tours">
+              <Link to="/packages">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition"
                 >
-                  Browse Tours
+                  Browse Packages
                 </motion.button>
               </Link>
             </div>

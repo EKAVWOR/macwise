@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaXTwitter, FaWhatsapp } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaXTwitter, FaWhatsapp, FaLinkedinIn } from "react-icons/fa6";
 import logo from "../assets/LOGO.png";
 
 // Services dropdown items
@@ -56,7 +56,7 @@ const Navbar = () => {
             {/* Social Icons */}
             <div className="flex items-center gap-3">
               <a
-                href="https://facebook.com/macwisetravels"
+                href="https://www.facebook.com/61571631222763/?locale=en_GB"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -65,7 +65,7 @@ const Navbar = () => {
                 <FaFacebookF size={14} />
               </a>
               <a
-                href="https://instagram.com/macwisetravels"
+                href="https://www.instagram.com/macwisetravels/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -74,13 +74,13 @@ const Navbar = () => {
                 <FaInstagram size={14} />
               </a>
               <a
-                href="https://twitter.com/macwisetravels"
+                href="https://ng.linkedin.com/in/mary-ani-08382a148"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Twitter"
+                aria-label="LinkedIn"
                 className="hover:text-[#FFD8A8] transition-colors"
               >
-                <FaXTwitter size={14} />
+              <FaLinkedinIn size={14} />
               </a>
             </div>
 
@@ -221,7 +221,7 @@ const Navbar = () => {
             {/* ── Desktop CTA ──────────────────────────────────────── */}
             <div className="hidden lg:block">
               <Link
-                to="/packages"
+                to="/contact"
                 className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#FF8C42] to-[#FF6B1A] text-white text-sm font-semibold shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 hover:scale-105 active:scale-95 transition-all duration-200"
               >
                 Book Now

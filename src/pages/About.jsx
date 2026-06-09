@@ -471,9 +471,7 @@ _Sent via Macwise Travels Contact Form_`;
                     <div>
                       <h4 className="font-bold text-lg mb-1">Our Office</h4>
                       <p className="text-white/80 text-sm">
-                        Block A, Shop 1, 3rd Avenue
-                        <br />
-                        Cornershop, Gwarimpa, Abuja, Nigeria
+                        3C7G+M26, Jabi, Abuja 900108, Federal Capital Territory, Nigeria
                       </p>
                     </div>
                   </div>
@@ -488,7 +486,7 @@ _Sent via Macwise Travels Contact Form_`;
                     <div>
                       <h4 className="font-bold text-lg mb-1">Email Us</h4>
                       <p className="text-white/80 text-sm group-hover:text-[#FFD8A8] transition-colors">
-                        Macwiseltd@gmail.com
+                        macwisetravelsltd@gmail.com
                       </p>
                     </div>
                   </a>
@@ -503,7 +501,7 @@ _Sent via Macwise Travels Contact Form_`;
                     <div>
                       <h4 className="font-bold text-lg mb-1">Call Us</h4>
                       <p className="text-white/80 text-sm group-hover:text-[#FFD8A8] transition-colors">
-                        +234 913 059 3550
+                        +234 805 267 6836
                       </p>
                     </div>
                   </a>

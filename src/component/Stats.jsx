@@ -3,7 +3,7 @@ import { ArrowRight, Calendar, MapPin, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // Import your package flyer images
-import package1 from '../assets/IMG-20260508-WA0006.jpg.jpeg';
+import package1 from '../assets/macwise 23.jpg.jpeg';
 import package2 from '../assets/IMG-20230503-WA0069.jpg.jpeg';
 import package3 from '../assets/IMG-20260602-WA0013.jpg.jpeg';
 import package4 from '../assets/IMG-20260602-WA0014.jpg.jpeg';

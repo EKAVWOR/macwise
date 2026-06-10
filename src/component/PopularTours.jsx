@@ -1,5 +1,14 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Plane, Map, Hotel, Shield, Package, FileCheck } from 'lucide-react';
+import {
+  ArrowRight,
+  Plane,
+  Map,
+  Hotel,
+  Shield,
+  Package,
+  FileCheck,
+  GraduationCap,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const OurServices = () => {
@@ -9,7 +18,8 @@ const OurServices = () => {
       title: 'Flight Bookings',
       description:
         'Seamless flight reservations with the best airlines worldwide. Enjoy competitive fares, flexible options, and 24/7 booking support.',
-      image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80',
+      image:
+        'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80',
       icon: Plane,
       link: '/services/flights',
     },
@@ -17,8 +27,9 @@ const OurServices = () => {
       id: 2,
       title: 'Customized Tours',
       description:
-        'Personalized tour experiences tailored to your dreams. From solo adventures to group expeditions, we craft journeys you’ll never forget.',
-      image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80',
+        'Personalized tour experiences tailored to your dreams. From solo adventures to group expeditions, we craft journeys you\'ll never forget.',
+      image:
+        'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80',
       icon: Map,
       link: '/services/tours',
     },
@@ -26,8 +37,9 @@ const OurServices = () => {
       id: 3,
       title: 'Hotel Reservations',
       description:
-        'Stay in the world’s finest hotels and resorts. We secure exclusive deals on luxury accommodations that match your style and budget.',
-      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
+        'Stay in the world\'s finest hotels and resorts. We secure exclusive deals on luxury accommodations that match your style and budget.',
+      image:
+        'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
       icon: Hotel,
       link: '/services/hotels',
     },
@@ -36,7 +48,8 @@ const OurServices = () => {
       title: 'Travel Insurance',
       description:
         'Travel with peace of mind. Our comprehensive insurance plans protect you from unexpected events, ensuring worry-free adventures.',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
+      image:
+        'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
       icon: Shield,
       link: '/services/insurance',
     },
@@ -44,8 +57,9 @@ const OurServices = () => {
       id: 5,
       title: 'Vacation Packages',
       description:
-        'All-inclusive vacation deals to dream destinations. From tropical beaches to cultural escapes—pack your bags, we’ll handle the rest.',
-      image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',
+        'All-inclusive vacation deals to dream destinations. From tropical beaches to cultural escapes—pack your bags, we\'ll handle the rest.',
+      image:
+        'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',
       icon: Package,
       link: '/services/packages',
     },
@@ -54,20 +68,32 @@ const OurServices = () => {
       title: 'Visa Procurement',
       description:
         'Stress-free visa processing for individuals and businesses. Our experts handle paperwork, embassies, and approvals—fast and reliable.',
-      image: 'https://images.unsplash.com/photo-1569craft-search?w=800&q=80',
+      image:
+        'https://images.unsplash.com/photo-1554629947-334ff61d85dc?w=800&q=80',
       icon: FileCheck,
       link: '/services/visa',
     },
+    // ✅ NEW — Educational Services
+    {
+      id: 7,
+      title: 'Educational Services',
+      description:
+        'Study abroad with confidence. From university applications to student visas, scholarships, and accommodation—we guide you every step toward your academic dreams.',
+      image:
+        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=80",
+      icon: GraduationCap,
+      link: '/services/education',
+    },
   ];
-
-  // Fixed visa image URL
-  services[5].image = 'https://images.unsplash.com/photo-1554629947-334ff61d85dc?w=800&q=80';
 
   return (
     <section className="py-20 lg:py-28 bg-gradient-to-b from-[#FFF5EE] via-white to-[#FFF5EE] relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute top-10 -left-32 w-96 h-96 bg-[#7B2CBF]/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-10 -right-32 w-96 h-96 bg-[#FF8C42]/15 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div
+        className="absolute bottom-10 -right-32 w-96 h-96 bg-[#FF8C42]/15 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"
+        style={{ animationDelay: '2s' }}
+      ></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#E0AAFF]/5 rounded-full mix-blend-multiply filter blur-3xl"></div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
@@ -115,16 +141,19 @@ const OurServices = () => {
                 <Link to={service.link}>
                   <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
                     {/* Image Container */}
-                    <div className="relative h-64 overflow-hidden">
+                    <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#7B2CBF] to-[#FF8C42]">
                       <img
                         src={service.image}
                         alt={service.title}
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                        }}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
-                      
+
                       {/* Purple to Orange Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#7B2CBF]/70 via-[#7B2CBF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      
+
                       {/* Icon Badge */}
                       <div className="absolute top-4 right-4 transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500">
                         <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FF8C42] to-[#FF6B1A] flex items-center justify-center shadow-xl">

@@ -20,6 +20,7 @@ import HotelReservations from "./pages/HotelReservations.jsx";
 import TravelInsurance from "./pages/TravelInsurance.jsx";
 import VacationPackages from "./pages/VacationPackages.jsx";
 import VisaProcurement from "./pages/VisaProcurement.jsx";
+import Education from "./pages/Education.jsx"
 
 // 404 Page (optional but recommended)
 import NotFound from "./pages/NotFound.jsx";
@@ -45,6 +46,8 @@ function App() {
         <Route path="/services/insurance" element={<TravelInsurance />} />
         <Route path="/services/packages" element={<VacationPackages />} />
         <Route path="/services/visa" element={<VisaProcurement />} />
+        <Route path="/services/education" element={<Education />} />
+        
 
         {/* ── 404 Page (Catch-All) ──────────────────────────── */}
         <Route path="*" element={<NotFound />} />

@@ -44,7 +44,7 @@ Please share more details about:%0A
 • Available dates%0A
 • What's included%0A
 • Booking process%0A%0A
-Thank you!`;
+Thank you`;
 
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
   };

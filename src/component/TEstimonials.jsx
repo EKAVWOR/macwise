@@ -11,19 +11,9 @@ import logo from '../assets/LOGO.png';
 
 const Testimonials = () => {
   const testimonials = [
+    
     {
       id: 1,
-      name: 'Innocent Chinedu Offia',
-      role: 'Schengen Visa Client',
-      location: 'Abuja',
-      initial: 'I',
-      rating: 5,
-      text: "Thanks to their guidance and attention to detail, my wife and I were able to submit a complete application for our Italy Schengen visas without stress. Their patience, honesty, and follow-through really set them apart.",
-      service: 'Italy Schengen Visa',
-      gradient: 'from-[#7B2CBF] to-[#FF8C42]',
-    },
-    {
-      id: 2,
       name: 'Innocent Chinedu Offia',
       role: 'Verified Client',
       location: 'Abuja',
@@ -34,10 +24,10 @@ const Testimonials = () => {
       gradient: 'from-[#9D4EDD] to-[#7B2CBF]',
     },
     {
-      id: 3,
+      id: 2,
       name: 'Chidinma',
       role: 'Verified Client',
-      location: 'Nigeria',
+      location: 'Lagos',
       initial: 'C',
       rating: 5,
       text: "An exceptional service from start to finish! Mrs Mary Chinasa Ani at Macwise Travel Ltd was incredibly helpful and ever responsive to my questions and concerns. I highly recommend Macwise Travel Ltd.",
@@ -45,10 +35,10 @@ const Testimonials = () => {
       gradient: 'from-[#7B2CBF] to-[#9D4EDD]',
     },
     {
-      id: 4,
+      id: 3,
       name: 'Obikaeze Odera Ifebigh',
       role: 'Multi-Visa Client',
-      location: 'Nigeria',
+      location: 'Abuja',
       initial: 'O',
       rating: 5,
       text: "I am pleased to share my outstanding experience with Macwise Travels Ltd and her team in handling my visa applications. After facing three previous rejections for my United States visa, Macwise Travels stepped in with a high level of professionalism, expertise, and attention to detail. They carefully reviewed my profile, guided me through the necessary corrections, and ensured that my application was properly structured and presented. To my great delight, not only was my U.S. visa approved, but I was granted a long-term multiple entry visa. In addition, Macwise Travels successfully assisted me with my visa applications to the United Kingdom, France, China, and Canada — all handled seamlessly. What truly sets them apart is their honesty, transparency, and commitment to client success.",
@@ -56,10 +46,10 @@ const Testimonials = () => {
       gradient: 'from-[#FF8C42] to-[#FF6B1A]',
     },
     {
-      id: 5,
+      id: 4,
       name: 'Noruwa Oyomire',
       role: 'Satisfied Client',
-      location: 'Nigeria',
+      location: 'USA',
       initial: 'N',
       rating: 5,
       text: "The service rendered to me was superb and top notch 👌... I will always recommend you anyday and anytime.",
@@ -67,10 +57,10 @@ const Testimonials = () => {
       gradient: 'from-[#9D4EDD] to-[#7B2CBF]',
     },
     {
-      id: 6,
+      id: 5,
       name: 'Chidumebi Udenze Oleka',
       role: 'UK Visa Client',
-      location: 'Nigeria',
+      location: 'Abuja',
       initial: 'C',
       rating: 5,
       text: "I am pleased to share my experience with Macwise Travels Ltd and their exceptional team. After facing three previous UK visa refusals, I almost lost hope. However, Macwise Travels Ltd handled my application with outstanding professionalism, attention to detail, and expert guidance. They carefully reviewed my documents, identified past mistakes, and helped me present a much stronger application. I am delighted to say that my UK visa was finally approved. I highly recommend Macwise Travels Ltd to anyone seeking reliable and result-driven travel and visa support.",
@@ -78,10 +68,10 @@ const Testimonials = () => {
       gradient: 'from-[#9D4EDD] to-[#FF8C42]',
     },
     {
-      id: 7,
+      id: 6,
       name: 'Muktar Abdulfattah Kabir',
       role: 'First-Time Traveler',
-      location: 'Nigeria',
+      location: 'Abuja',
       initial: 'M',
       rating: 5,
       text: "I want to extend a huge thank you to Mrs. Mary, the CEO, and the entire Macwise Travels Limited team. This was my first time applying for a UK visa, and you made the entire process incredibly easy. I received my visa on my first attempt, all thanks to the smooth and detailed guidance you provided. I truly appreciate your help.",

@@ -4,12 +4,11 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 // Import your package flyer images
-import package1 from '../assets/macwise 23.jpg.jpeg';
-import package2 from '../assets/IMG-20230503-WA0069.jpg.jpeg';
-import package3 from '../assets/IMG-20260602-WA0013.jpg.jpeg';
-import package4 from '../assets/IMG-20260602-WA0014.jpg.jpeg';
-import package5 from '../assets/im1.png';
-import package6 from '../assets/image2.png';
+import package1 from '../assets/mac.jpeg';
+import package2 from '../assets/tok.jpeg';
+import package3 from '../assets/chi.jpeg';
+import package4 from '../assets/ind.jpeg';
+
 
 const OurPackages = () => {
   // ✅ WhatsApp number
@@ -25,12 +24,12 @@ const OurPackages = () => {
     {
       id: 3,
       title: 'Zanzibar Escape',
-      flyer: package3,
+      flyer: package2,
     },
     {
       id: 4,
       title: 'Turkey Discovery',
-      flyer: package4,
+      flyer: package3,
     },
    
    

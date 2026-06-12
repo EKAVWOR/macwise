@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Check, ArrowRight, Plane } from 'lucide-react';
 import { Link } from 'react-router-dom';
 // Import your two images from storage
-import aboutImage1 from '../assets/IMG-20260602-WA0013.jpg.jpeg'; // Replace with your actual image path
+import aboutImage1 from '../assets/mac.jpeg'; // Replace with your actual image path
 import aboutImage2 from '../assets/IMG-20230510-WA0078.jpg.jpeg'; // Replace with your actual image path
 
 const AboutUs = () => {

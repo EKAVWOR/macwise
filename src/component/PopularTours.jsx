@@ -8,6 +8,7 @@ import {
   Package,
   FileCheck,
   GraduationCap,
+  Truck,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -73,16 +74,26 @@ const OurServices = () => {
       icon: FileCheck,
       link: '/services/visa',
     },
-    // ✅ NEW — Educational Services
     {
       id: 7,
       title: 'Educational Services',
       description:
         'Study abroad with confidence. From university applications to student visas, scholarships, and accommodation—we guide you every step toward your academic dreams.',
       image:
-        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=80",
+        'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=80',
       icon: GraduationCap,
       link: '/services/education',
+    },
+    // ✅ NEW — Logistics Services
+    {
+      id: 8,
+      title: 'Logistics Services',
+      description:
+        'Reliable freight & cargo solutions worldwide. From international shipping to local delivery, we handle your goods with care, speed, and complete tracking.',
+      image:
+        'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80',
+      icon: Truck,
+      link: '/services/logistics',
     },
   ];
 

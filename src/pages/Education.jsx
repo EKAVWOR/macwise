@@ -774,7 +774,7 @@ const Education = () => {
                     Macwise Travels Limited
                   </h4>
                   <p className="text-gray-600 text-sm">
-                    3C7G+M26, Jabi, Abuja 900108, Federal Capital Territory,
+                    Suite 304, 3rd floor MKK Plaza Jabi Abuja FCT,
                     Nigeria
                   </p>
                   <a

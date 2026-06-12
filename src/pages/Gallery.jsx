@@ -5,13 +5,13 @@ import Navbar from '../component/Navbar';
 import Footer from '../component/Footer';
 
 import lane from '../assets/IMG20230509110152.jpg.jpeg';
-import Germany from '../assets/IMG-20230505-WA0065.jpg.jpeg';
-import poland from '../assets/I2.jpeg';
-import egypr from '../assets/I3.jpeg';
-import quatar from '../assets/IM4.jpeg';
-import good from '../assets/IM5.jpeg';
-import berlin from '../assets/IMG-20230510-WA0078.jpg.jpeg';
-import winner from '../assets/IMG20230506111111.jpg.jpeg';
+import Germany from '../assets/CANADA VISA (1).jpeg';
+import poland from '../assets/CHINA VISA.jpeg';
+import egypr from '../assets/fff.jpg';
+import quatar from '../assets/ffffff.jpeg';
+import good from '../assets/hhhh.jpg';
+import berlin from '../assets/ff.jpg';
+import winner from '../assets/hhh.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -246,7 +246,7 @@ const Gallery = () => {
           {[
             { number: '500+', label: 'Visas Processed', icon: '🛂' },
             { number: '15+', label: 'Countries', icon: '🌍' },
-            { number: '100%', label: 'Success Rate', icon: '🏆' },
+            { number: '95%', label: 'Success Rate', icon: '🏆' },
             { number: '9+', label: 'Years Experience', icon: '⭐' },
           ].map((stat, i) => (
             <motion.div

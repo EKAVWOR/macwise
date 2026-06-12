@@ -116,7 +116,7 @@ const AboutUs = () => {
               viewport={{ once: true }}
               className="text-lg text-gray-600 leading-relaxed"
             >
-              Macwise Travels Ltd is a dynamic and trusted travel management company committed to delivering seamless, reliable, and professional travel solutions with years of experience in the travel industry. Founded in 2017 and incorporated in 2020. As proud members of the National Association of Nigerian Travel Agencies (NANTA), the Nigerian Civil Aviation Authority (NCAA), and the National Association of Tour Operators (NATOP). Established with a vision to simplify travel experiences, we proudly serve a diverse clientele including government agencies, corporate organizations, private businesses, and individual travelers.
+              Macwise Travels Ltd is a dynamic and trusted travel management company committed to delivering seamless, reliable, and professional travel solutions with years of experience in the travel industry. Founded in 2017 and incorporated in 2024. As proud members of the National Association of Nigerian Travel Agencies (NANTA), the Nigerian Civil Aviation Authority (NCAA), SKAL, and the National Association of Tour Operators (NATOP). Established with a vision to simplify travel experiences, we proudly serve a diverse clientele including government agencies, corporate organizations, private businesses, and individual travelers.
             </motion.p>
 
             {/* Features List */}

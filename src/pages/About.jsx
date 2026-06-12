@@ -23,6 +23,11 @@ import { FaWhatsapp } from 'react-icons/fa';
 import Navbar from '../component/Navbar';
 import lady from "../assets/IMG20230506111111.jpg.jpeg";
 import agent from "../assets/IMG-20230505-WA0065.jpg.jpeg";
+import NANTA from '../assets/NANTA.jpg';
+import NCAA from '../assets/NCAA.jpg';
+import NATOP from '../assets/NATOP.png';
+import SKAL from '../assets/SKAL.jpg';
+
 
 const About = () => {
   // ── Form State Management ──────────────────────────────────
@@ -35,8 +40,6 @@ const About = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // ⚠️ IMPORTANT: Replace with Mrs. Mary's actual WhatsApp number
-  // Format: country code + number (no + or spaces)
   const WHATSAPP_NUMBER = '2348052676836';
 
   const handleChange = (e) => {
@@ -56,7 +59,6 @@ const About = () => {
 
     setIsSubmitting(true);
 
-    // Format WhatsApp message with emojis & formatting
     const whatsappMessage = `*🌍 New Inquiry from Macwise Travels Website*
 
 *👤 Name:* ${formData.name}
@@ -72,13 +74,11 @@ _Sent via Macwise Travels Contact Form_`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
-    // Brief loading state then open WhatsApp
     setTimeout(() => {
       setIsSubmitted(true);
       setIsSubmitting(false);
       window.open(whatsappUrl, '_blank');
 
-      // Reset form after 3 seconds
       setTimeout(() => {
         setFormData({ name: '', email: '', subject: '', message: '' });
         setIsSubmitted(false);
@@ -136,7 +136,28 @@ _Sent via Macwise Travels Contact Form_`;
     'National Association of Nigerian Travel Agencies (NANTA)',
     'Nigerian Civil Aviation Authority (NCAA)',
     'National Association of Tour Operators (NATOP)',
+    'SKAL'
   ];
+
+  // ✅ NEW — Accreditation Logos
+ const accreditationLogos = [
+  {
+    name: 'NANTA',
+    logo: NANTA,
+  },
+  {
+    name: 'NCAA',
+    logo: NCAA,
+  },
+  {
+    name: 'NATOP',
+    logo: NATOP,
+  },
+  {
+    name: 'SKAL',
+    logo: SKAL,
+  },
+];
 
   return (
     <div className="min-h-screen bg-white">
@@ -147,14 +168,11 @@ _Sent via Macwise Travels Contact Form_`;
         style={{ backgroundImage: `url(${lady})` }}
         className="relative bg-cover bg-center h-[400px] md:h-[500px] mt-[120px] md:mt-[140px] flex items-center justify-center overflow-hidden"
       >
-        {/* Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#7B2CBF]/80 via-[#1a0d2e]/70 to-[#FF8C42]/70"></div>
         
-        {/* Animated Background Elements */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-[#FF8C42]/30 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-[#9D4EDD]/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
 
-        {/* Content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -179,7 +197,6 @@ _Sent via Macwise Travels Contact Form_`;
 
       {/* ── COMPANY INTRO SECTION ────────────────────────────────── */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-[#FFF5EE] relative overflow-hidden">
-        {/* Decorative Background */}
         <div className="absolute top-20 -left-32 w-96 h-96 bg-[#7B2CBF]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 -right-32 w-96 h-96 bg-[#FF8C42]/10 rounded-full blur-3xl"></div>
 
@@ -199,11 +216,9 @@ _Sent via Macwise Travels Contact Form_`;
                   alt="Macwise Travels Team"
                   className="w-full h-[500px] object-cover"
                 />
-                {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#7B2CBF]/40 to-transparent"></div>
               </div>
 
-              {/* Floating Stats Card */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -245,8 +260,8 @@ _Sent via Macwise Travels Contact Form_`;
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4 text-lg">
                 Macwise Travels & Tours Limited is a leading Travel Management
-                company, founded in <strong>2020</strong> and incorporated in{' '}
-                <strong>2022</strong>. We specialize in managing the travel needs
+                company, founded in <strong>2017</strong> and incorporated in{' '}
+                <strong>2024</strong>. We specialize in managing the travel needs
                 of NGOs, government agencies, multinational corporations, private
                 firms, and individuals.
               </p>
@@ -263,7 +278,7 @@ _Sent via Macwise Travels Contact Form_`;
                   <Shield size={18} className="text-[#7B2CBF]" />
                   Our Accreditations
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-6">
                   {accreditations.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-gray-700 text-sm">
                       <CheckCircle2
@@ -274,6 +289,39 @@ _Sent via Macwise Travels Contact Form_`;
                     </li>
                   ))}
                 </ul>
+
+                {/* ✅ NEW — Accreditation Logos */}
+                <div className="pt-5 border-t border-[#E0AAFF]/30">
+                  <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-4 text-center">
+                    Certified Member Of
+                  </p>
+                  <div className="flex flex-wrap items-center justify-center gap-6">
+                    {accreditationLogos.map((agency, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 }}
+                        whileHover={{ scale: 1.1, y: -3 }}
+                        className="bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-100  hover:grayscale-0"
+                      >
+                        <img
+                          src={agency.logo}
+                          alt={agency.name}
+                          className="h-10 md:h-12 w-auto object-contain"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            if (e.target.nextSibling) {
+                              e.target.nextSibling.style.display = 'flex';
+                            }
+                          }}
+                        />
+                        
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -301,7 +349,6 @@ _Sent via Macwise Travels Contact Form_`;
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Vision Card */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -310,7 +357,6 @@ _Sent via Macwise Travels Contact Form_`;
               whileHover={{ y: -10 }}
               className="bg-gradient-to-br from-[#7B2CBF] to-[#9D4EDD] rounded-3xl p-8 md:p-10 text-white shadow-2xl relative overflow-hidden group"
             >
-              {/* Background Pattern */}
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#FF8C42]/20 rounded-full blur-2xl"></div>
 
@@ -328,7 +374,6 @@ _Sent via Macwise Travels Contact Form_`;
               </div>
             </motion.div>
 
-            {/* Mission Card */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -337,7 +382,6 @@ _Sent via Macwise Travels Contact Form_`;
               whileHover={{ y: -10 }}
               className="bg-gradient-to-br from-[#FF8C42] to-[#FF6B1A] rounded-3xl p-8 md:p-10 text-white shadow-2xl relative overflow-hidden group"
             >
-              {/* Background Pattern */}
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#7B2CBF]/20 rounded-full blur-2xl"></div>
 
@@ -361,12 +405,10 @@ _Sent via Macwise Travels Contact Form_`;
 
       {/* ── CORE VALUES SECTION ──────────────────────────────────── */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-[#FFF5EE] via-white to-[#FFF5EE] relative overflow-hidden">
-        {/* Background Decorations */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#7B2CBF]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-[#FF8C42]/10 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto max-w-7xl px-4 relative">
-          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -388,7 +430,6 @@ _Sent via Macwise Travels Contact Form_`;
             </p>
           </motion.div>
 
-          {/* Core Values Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {coreValues.map((value, index) => {
               const Icon = value.icon;
@@ -402,19 +443,16 @@ _Sent via Macwise Travels Contact Form_`;
                   whileHover={{ y: -8 }}
                   className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group relative overflow-hidden"
                 >
-                  {/* Number Badge */}
                   <div className="absolute top-4 right-4 text-6xl font-bold text-gray-100 group-hover:text-[#FF8C42]/20 transition-colors">
                     {String(index + 1).padStart(2, '0')}
                   </div>
 
-                  {/* Icon */}
                   <div
                     className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${value.gradient} flex items-center justify-center mb-4 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
                   >
                     <Icon className="text-white" size={26} />
                   </div>
 
-                  {/* Content */}
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#7B2CBF] transition-colors">
                     {value.title}
                   </h3>
@@ -422,7 +460,6 @@ _Sent via Macwise Travels Contact Form_`;
                     {value.description}
                   </p>
 
-                  {/* Bottom Accent Bar */}
                   <div
                     className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${value.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
                   ></div>
@@ -437,14 +474,12 @@ _Sent via Macwise Travels Contact Form_`;
       <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-            {/* Left: Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="bg-gradient-to-br from-[#7B2CBF] to-[#1a0d2e] rounded-3xl p-8 md:p-10 text-white relative overflow-hidden"
             >
-              {/* Background Pattern */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF8C42]/20 rounded-full blur-3xl"></div>
 
               <div className="relative z-10">
@@ -462,7 +497,6 @@ _Sent via Macwise Travels Contact Form_`;
                   every step of the way.
                 </p>
 
-                {/* Contact Items */}
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF8C42] to-[#FF6B1A] flex items-center justify-center flex-shrink-0">
@@ -471,7 +505,7 @@ _Sent via Macwise Travels Contact Form_`;
                     <div>
                       <h4 className="font-bold text-lg mb-1">Our Office</h4>
                       <p className="text-white/80 text-sm">
-                        3C7G+M26, Jabi, Abuja 900108, Federal Capital Territory, Nigeria
+                        Suite 304, 3rd floor MKK Plaza Jabi Abuja FCT, Nigeria
                       </p>
                     </div>
                   </div>
@@ -506,7 +540,6 @@ _Sent via Macwise Travels Contact Form_`;
                     </div>
                   </a>
 
-                  {/* WhatsApp Quick Action */}
                   <a
                     href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello Macwise Travels! I would like to inquire about your services.')}`}
                     target="_blank"
@@ -527,7 +560,6 @@ _Sent via Macwise Travels Contact Form_`;
               </div>
             </motion.div>
 
-            {/* Right: WhatsApp Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -548,7 +580,6 @@ _Sent via Macwise Travels Contact Form_`;
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Name Field */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Your Name <span className="text-red-500">*</span>
@@ -564,7 +595,6 @@ _Sent via Macwise Travels Contact Form_`;
                   />
                 </div>
 
-                {/* Email Field */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Your Email <span className="text-red-500">*</span>
@@ -580,7 +610,6 @@ _Sent via Macwise Travels Contact Form_`;
                   />
                 </div>
 
-                {/* Subject Dropdown */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Subject <span className="text-red-500">*</span>
@@ -603,7 +632,6 @@ _Sent via Macwise Travels Contact Form_`;
                   </select>
                 </div>
 
-                {/* Message Field */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Your Message
@@ -618,7 +646,6 @@ _Sent via Macwise Travels Contact Form_`;
                   ></textarea>
                 </div>
 
-                {/* Submit Button */}
                 <motion.button
                   type="submit"
                   disabled={isSubmitting || isSubmitted}
@@ -648,7 +675,6 @@ _Sent via Macwise Travels Contact Form_`;
                   )}
                 </motion.button>
 
-                {/* Info Note */}
                 <p className="text-xs text-gray-500 text-center mt-3 flex items-center justify-center gap-1">
                   <FaWhatsapp className="text-[#25D366]" size={12} />
                   Your message will open in WhatsApp for instant delivery

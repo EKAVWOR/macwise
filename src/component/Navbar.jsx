@@ -13,6 +13,8 @@ const servicesDropdown = [
   { label: "Travel Insurance", path: "/services/insurance" },
   { label: "Vacation Packages", path: "/services/packages" },
   { label: "Visa Procurement", path: "/services/visa" },
+  { label: "Education", path: "/services/education" },
+  { label: "Logistics", path: "/services/logistics" },
 ];
 
 const navLinks = [
@@ -91,7 +93,7 @@ const Navbar = () => {
                 className="flex items-center gap-2 hover:text-[#FFD8A8] transition-colors"
               >
                 <Phone size={14} />
-                <span className="font-medium">+234-805-267-6836</span>
+                <span className="font-medium">07061625285</span>
               </a>
               <a
                 href="https://wa.me/2348052676836"
@@ -100,7 +102,7 @@ const Navbar = () => {
                 className="hidden sm:flex items-center gap-2 hover:text-[#FFD8A8] transition-colors"
               >
                 <FaWhatsapp size={14} />
-                <span className="font-medium">+234-805-267-6836</span>
+                <span className="font-medium">+2348052676836</span>
               </a>
               <a
                 href="mailto:macwisetravelsltd@gmail.com"

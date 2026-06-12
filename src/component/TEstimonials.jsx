@@ -1,17 +1,43 @@
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, MapPin } from 'lucide-react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+
+// ✅ Import your logo
+import logo from '../assets/LOGO.png';
 
 const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
+      name: 'Innocent Chinedu Offia',
+      role: 'Schengen Visa Client',
+      location: 'Abuja',
+      initial: 'I',
+      rating: 5,
+      text: "Thanks to their guidance and attention to detail, my wife and I were able to submit a complete application for our Italy Schengen visas without stress. Their patience, honesty, and follow-through really set them apart.",
+      service: 'Italy Schengen Visa',
+      gradient: 'from-[#7B2CBF] to-[#FF8C42]',
+    },
+    {
+      id: 2,
+      name: 'Innocent Chinedu Offia',
+      role: 'Verified Client',
+      location: 'Abuja',
+      initial: 'I',
+      rating: 5,
+      text: "From the very first consultation, they were professional, responsive, and genuinely invested in making my visa process smooth. They took the time to explain every requirement clearly, helped me organize my documents properly, and gave practical advice that strengthened my application. Communication was fast and transparent throughout — I always knew what was next and never felt lost.",
+      service: 'Professional Visa Consultation',
+      gradient: 'from-[#9D4EDD] to-[#7B2CBF]',
+    },
+    {
+      id: 3,
       name: 'Chidinma',
       role: 'Verified Client',
+      location: 'Nigeria',
       initial: 'C',
       rating: 5,
       text: "An exceptional service from start to finish! Mrs Mary Chinasa Ani at Macwise Travel Ltd was incredibly helpful and ever responsive to my questions and concerns. I highly recommend Macwise Travel Ltd.",
@@ -19,19 +45,21 @@ const Testimonials = () => {
       gradient: 'from-[#7B2CBF] to-[#9D4EDD]',
     },
     {
-      id: 2,
+      id: 4,
       name: 'Obikaeze Odera Ifebigh',
       role: 'Multi-Visa Client',
+      location: 'Nigeria',
       initial: 'O',
       rating: 5,
-      text: "I am pleased to share my outstanding experience with Macwise Travels Ltd and her team in handling my visa applications. After facing three previous rejections for my United States visa, Macwise Travels stepped in with a high level of professionalism, expertise, and attention to detail. They carefully reviewed my profile, guided me through the necessary corrections, and ensured that my application was properly structured and presented. To my great delight, not only was my U.S. visa approved, but I was granted a long-term multiple entry visa. In addition, Macwise Travels successfully assisted me with my visa applications to the United Kingdom, France, China, and Canada — all handled seamlessly. What truly sets them apart is their honesty, transparency, and commitment to client success. I have since referred several friends and associates to Macwise Travels Ltd, and I will continue to recommend their services.",
+      text: "I am pleased to share my outstanding experience with Macwise Travels Ltd and her team in handling my visa applications. After facing three previous rejections for my United States visa, Macwise Travels stepped in with a high level of professionalism, expertise, and attention to detail. They carefully reviewed my profile, guided me through the necessary corrections, and ensured that my application was properly structured and presented. To my great delight, not only was my U.S. visa approved, but I was granted a long-term multiple entry visa. In addition, Macwise Travels successfully assisted me with my visa applications to the United Kingdom, France, China, and Canada — all handled seamlessly. What truly sets them apart is their honesty, transparency, and commitment to client success.",
       service: 'US, UK, France, China & Canada Visa',
       gradient: 'from-[#FF8C42] to-[#FF6B1A]',
     },
     {
-      id: 3,
+      id: 5,
       name: 'Noruwa Oyomire',
       role: 'Satisfied Client',
+      location: 'Nigeria',
       initial: 'N',
       rating: 5,
       text: "The service rendered to me was superb and top notch 👌... I will always recommend you anyday and anytime.",
@@ -39,19 +67,21 @@ const Testimonials = () => {
       gradient: 'from-[#9D4EDD] to-[#7B2CBF]',
     },
     {
-      id: 4,
+      id: 6,
       name: 'Chidumebi Udenze Oleka',
       role: 'UK Visa Client',
+      location: 'Nigeria',
       initial: 'C',
       rating: 5,
-      text: "I am pleased to share my experience with Macwise Travels Ltd and their exceptional team. After facing three previous UK visa refusals, I almost lost hope. However, Macwise Travels Ltd handled my application with outstanding professionalism, attention to detail, and expert guidance. They carefully reviewed my documents, identified past mistakes, and helped me present a much stronger application. I am delighted to say that my UK visa was finally approved. I highly recommend Macwise Travels Ltd to anyone seeking reliable and result-driven travel and visa support. Their dedication and expertise truly make a difference.",
+      text: "I am pleased to share my experience with Macwise Travels Ltd and their exceptional team. After facing three previous UK visa refusals, I almost lost hope. However, Macwise Travels Ltd handled my application with outstanding professionalism, attention to detail, and expert guidance. They carefully reviewed my documents, identified past mistakes, and helped me present a much stronger application. I am delighted to say that my UK visa was finally approved. I highly recommend Macwise Travels Ltd to anyone seeking reliable and result-driven travel and visa support.",
       service: 'UK Visa Procurement',
       gradient: 'from-[#9D4EDD] to-[#FF8C42]',
     },
     {
-      id: 5,
+      id: 7,
       name: 'Muktar Abdulfattah Kabir',
       role: 'First-Time Traveler',
+      location: 'Nigeria',
       initial: 'M',
       rating: 5,
       text: "I want to extend a huge thank you to Mrs. Mary, the CEO, and the entire Macwise Travels Limited team. This was my first time applying for a UK visa, and you made the entire process incredibly easy. I received my visa on my first attempt, all thanks to the smooth and detailed guidance you provided. I truly appreciate your help.",
@@ -93,7 +123,7 @@ const Testimonials = () => {
             Real stories from real travelers who trusted us with their journey
           </p>
 
-          {/* ✅ Overall Rating Display — auto-calculated as 5.00 */}
+          {/* Overall Rating Display */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -147,10 +177,10 @@ const Testimonials = () => {
             >
               <motion.div
                 whileHover={{ y: -10 }}
-                className="bg-white rounded-3xl p-8 md:p-10 shadow-xl relative h-full border border-gray-100"
+                className="bg-white rounded-3xl p-8 md:p-10 pb-24 shadow-xl relative h-full border border-gray-100 overflow-hidden"
               >
                 {/* Quote Icon */}
-                <div className="absolute -top-6 left-8">
+                <div className="absolute -top-6 left-8 z-10">
                   <div
                     className={`w-14 h-14 rounded-full bg-gradient-to-br ${testimonial.gradient} flex items-center justify-center shadow-lg`}
                   >
@@ -159,7 +189,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Rating */}
-                <div className="flex gap-1 mb-4 justify-center pt-2">
+                <div className="flex gap-1 mb-4 justify-center pt-2 relative z-10">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
@@ -170,12 +200,12 @@ const Testimonials = () => {
                 </div>
 
                 {/* Text */}
-                <p className="text-gray-700 text-center mb-6 italic leading-relaxed text-sm md:text-base">
+                <p className="text-gray-700 text-center mb-6 italic leading-relaxed text-sm md:text-base relative z-10">
                   "{testimonial.text}"
                 </p>
 
                 {/* Service Tag */}
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-6 relative z-10">
                   <span
                     className={`px-4 py-1.5 rounded-full bg-gradient-to-r ${testimonial.gradient} text-white text-xs font-semibold shadow-md`}
                   >
@@ -184,7 +214,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
+                <div className="flex items-center gap-4 pt-6 border-t border-gray-100 relative z-10">
                   <div className="relative flex-shrink-0">
                     {/* Initial Avatar */}
                     <div
@@ -192,7 +222,7 @@ const Testimonials = () => {
                     >
                       {testimonial.initial}
                     </div>
-                    {/* ✅ Verified Badge — Fixed SVG path */}
+                    {/* Verified Badge */}
                     <span className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center border-2 border-white shadow-md">
                       <svg
                         className="w-3 h-3 text-white"
@@ -214,19 +244,44 @@ const Testimonials = () => {
                       {testimonial.name}
                     </h4>
                     <p className="text-gray-500 text-sm">{testimonial.role}</p>
+
+                    {/* Location */}
+                    <div className="flex items-center gap-1 mt-1">
+                      <MapPin size={12} className="text-[#FF6B1A]" />
+                      <span className="text-xs text-gray-500 font-medium">
+                        {testimonial.location}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ✅ NEW — BIG BOLD LOGO AT BOTTOM CENTER */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-[#7B2CBF]/5 via-white to-[#FF8C42]/5 border-t border-gray-100 py-4  justify-end items-center pr-6 flex  gap-3">
+                  <img
+                    src={logo}
+                    alt="Macwise Travels"
+                    className="w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-md"
+                  />
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">
+                      Verified Review by
+                    </span>
+                    <span className="text-base md:text-lg font-black bg-gradient-to-r from-[#7B2CBF] to-[#FF8C42] bg-clip-text text-transparent leading-tight">
+                      MACWISE TRAVELS
+                    </span>
                   </div>
                 </div>
 
                 {/* Decorative Element */}
                 <div
-                  className={`absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-br ${testimonial.gradient} rounded-tl-full opacity-10 -z-10`}
+                  className={`absolute bottom-20 right-0 w-32 h-32 bg-gradient-to-br ${testimonial.gradient} rounded-tl-full opacity-10 -z-10`}
                 ></div>
               </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* ✅ Trust Badges / Stats — Updated to reflect 5 reviews */}
+        {/* Trust Badges / Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -235,7 +290,7 @@ const Testimonials = () => {
         >
           {[
             { number: '5.0', label: 'Average Rating', icon: '⭐' },
-            { number: '100%', label: 'Satisfaction Rate', icon: '💯' },
+            { number: '95%', label: 'Satisfaction Rate', icon: '💯' },
             { number: '15+', label: 'Countries Covered', icon: '🌍' },
             { number: '9+', label: 'Years Experience', icon: '🏆' },
           ].map((stat, i) => (
@@ -257,7 +312,7 @@ const Testimonials = () => {
           ))}
         </motion.div>
 
-        {/* ✅ Rating Breakdown Section — NEW */}
+        {/* Rating Breakdown */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -333,7 +388,7 @@ const Testimonials = () => {
           </div>
         </motion.div>
 
-        {/* CTA Below Testimonials */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

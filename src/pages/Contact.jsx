@@ -55,7 +55,7 @@ const Contact = () => {
     {
       icon: FaMapMarkerAlt,
       title: 'Visit Us',
-      text: '3C7G+M26, Jabi, Abuja 900108, FCT, Nigeria',
+      text: 'Suite 304, 3rd floor MKK Plaza Jabi Abuja FCT, Nigeria',
       gradient: 'from-[#7B2CBF] to-[#9D4EDD]',
     },
     {
@@ -238,7 +238,7 @@ const Contact = () => {
                     Macwise Travels Limited
                   </h4>
                   <p className="text-gray-600 text-sm">
-                    3C7G+M26, Jabi, Abuja 900108, Federal Capital Territory,
+                    Suite 304, 3rd floor MKK Plaza Jabi Abuja FCT,
                     Nigeria
                   </p>
                   <a

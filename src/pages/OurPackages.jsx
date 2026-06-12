@@ -9,11 +9,7 @@ const flyers = [
     image: "src/assets/macwise 23.jpg.jpeg",
     title: "Tanzania Referral Visa",
   },
-  {
-    id: 2,
-    image: "src/assets/IMG-20230503-WA0069.jpg.jpeg",
-    title: "Travel Services",
-  },
+ 
   {
     id: 3,
     image: "src/assets/IMG-20260602-WA0014.jpg.jpeg",
@@ -29,11 +25,7 @@ const flyers = [
     image: "src/assets/IMG-20260508-WA0006.jpg.jpeg",
     title: "Tour Package",
   },
-  {
-    id: 6,
-    image: "src/assets/IMG-20250911-WA0018.jpg.jpeg",
-    title: "Visa Processing",
-  },
+ 
 ];
 
 const OurPackages = () => {
@@ -114,7 +106,7 @@ const OurPackages = () => {
           </p>
 
           <a
-            href="https://wa.me/2348068725251"
+            href="https://wa.me/2348052676836"
             target="_blank"
             rel="noreferrer"
             className="inline-block bg-white text-[#7B2CBF] font-bold px-8 py-4 rounded-full hover:scale-105 transition"

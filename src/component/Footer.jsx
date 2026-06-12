@@ -20,6 +20,8 @@ const Footer = () => {
     { name: 'Travel Insurance', path: '/services/insurance' },
     { name: 'Vacation Packages', path: '/services/packages' },
     { name: 'Visa Procurement', path: '/services/visa' },
+    { name: "Education", path: "/services/education" },
+    { name: "Logistics", path: "/services/logistics" },
   ];
 
   const socialLinks = [

@@ -6,23 +6,23 @@ import Footer from "../component/Footer";
 const flyers = [
   {
     id: 1,
-    image: "src/assets/macwise 23.jpg.jpeg",
+    image: "src/assets/mac.jpeg",
     title: "Tanzania Referral Visa",
   },
  
   {
     id: 3,
-    image: "src/assets/IMG-20260602-WA0014.jpg.jpeg",
+    image: "src/assets/ind.jpeg",
     title: "What We Do",
   },
   {
     id: 4,
-    image: "src/assets/IMG-20260602-WA0013.jpg.jpeg",
+    image: "src/assets/tok.jpeg",
     title: "Logistics Services",
   },
   {
     id: 5,
-    image: "src/assets/IMG-20260508-WA0006.jpg.jpeg",
+    image: "src/assets/chi.jpeg",
     title: "Tour Package",
   },
  

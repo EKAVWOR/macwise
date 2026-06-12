@@ -3,29 +3,33 @@ import { motion } from "framer-motion";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 
+// ✅ IMPORT images at the top — this is the correct way
+import mac from "../assets/mac.jpeg";
+import ind from "../assets/ind.jpeg";
+import tok from "../assets/tok.jpeg";
+import chi from "../assets/chi.jpeg";
+
 const flyers = [
   {
     id: 1,
-    image: "src/assets/mac.jpeg",
+    image: mac,           // ✅ Use the imported variable
     title: "Tanzania Referral Visa",
   },
- 
   {
     id: 3,
-    image: "src/assets/ind.jpeg",
+    image: ind,           // ✅ Imported
     title: "What We Do",
   },
   {
     id: 4,
-    image: "src/assets/tok.jpeg",
+    image: tok,           // ✅ Imported
     title: "Logistics Services",
   },
   {
     id: 5,
-    image: "src/assets/chi.jpeg",
+    image: chi,           // ✅ Imported
     title: "Tour Package",
   },
- 
 ];
 
 const OurPackages = () => {
@@ -43,8 +47,8 @@ const OurPackages = () => {
           </h1>
 
           <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto">
-            Explore our latest travel offers, visa packages,
-            tour promotions and logistics services.
+            Explore our latest travel offers, visa packages, tour promotions
+            and logistics services.
           </p>
         </div>
       </section>
@@ -52,7 +56,6 @@ const OurPackages = () => {
       {/* FLYERS */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto max-w-7xl px-4">
-
           <div className="text-center mb-14">
             <span className="text-[#FF6B1A] font-bold uppercase tracking-[0.3em] text-sm">
               Travel Offers
@@ -63,8 +66,8 @@ const OurPackages = () => {
             </h2>
 
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-              Browse through our collection of travel flyers,
-              visa packages, hotel deals and tour promotions.
+              Browse through our collection of travel flyers, visa packages,
+              hotel deals and tour promotions.
             </p>
           </div>
 
@@ -85,8 +88,6 @@ const OurPackages = () => {
                   alt={flyer.title}
                   className="w-full object-cover"
                 />
-
-                
               </motion.div>
             ))}
           </div>
@@ -101,8 +102,8 @@ const OurPackages = () => {
           </h2>
 
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            Contact our team for visa assistance, flight bookings,
-            hotel reservations, tours and personalized travel plans.
+            Contact our team for visa assistance, flight bookings, hotel
+            reservations, tours and personalized travel plans.
           </p>
 
           <a

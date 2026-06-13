@@ -629,6 +629,8 @@ _Sent via Macwise Travels Contact Form_`;
                     <option value="Customized Tour">🗺️ Customized Tour</option>
                     <option value="Travel Insurance">🛡️ Travel Insurance</option>
                     <option value="General Inquiry">💬 General Inquiry</option>
+                    <option value="Education">💬 Education</option>
+                    <option value="Logistics">💬 Logistics</option>
                   </select>
                 </div>
 

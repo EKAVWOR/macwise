@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
-import WhatsAppButton from "./component/WhatsAppButton.jsx";
+import WhatsAppButton from "./component/WhatsAppButton.jsx.";
 
 // Main Pages
 import Homepage from "./pages/Homepage.jsx";

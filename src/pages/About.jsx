@@ -168,10 +168,10 @@ _Sent via Macwise Travels Contact Form_`;
         style={{ backgroundImage: `url(${lady})` }}
         className="relative bg-cover bg-center h-[400px] md:h-[500px] mt-[120px] md:mt-[140px] flex items-center justify-center overflow-hidden"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#7B2CBF]/80 via-[#1a0d2e]/70 to-[#FF8C42]/70"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-br from-[#7B2CBF]/80 via-[#1a0d2e]/70 to-[#FF8C42]/70"></div>
         
         <div className="absolute top-10 left-10 w-32 h-32 bg-[#FF8C42]/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-[#9D4EDD]/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-[#9D4EDD]/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div> */}
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -180,7 +180,7 @@ _Sent via Macwise Travels Contact Form_`;
           className="relative z-10 text-center px-4"
         >
           <span className="inline-block text-[#FFD8A8] font-bold text-sm tracking-[0.3em] uppercase mb-4">
-            ✈️ Get to Know Us
+             Get to Know Us
           </span>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-2xl">
             About Us

@@ -179,18 +179,18 @@ _Sent via Macwise Travels Contact Form_`;
           transition={{ duration: 0.8 }}
           className="relative z-10 text-center px-4"
         >
-          <span className="inline-block text-[#FFD8A8] font-bold text-sm tracking-[0.3em] uppercase mb-4">
+          <span className="inline-block text-[#000000] font-bold text-sm tracking-[0.3em] uppercase mb-4">
              Get to Know Us
           </span>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-2xl">
             About Us
           </h1>
-          <div className="flex items-center justify-center gap-2 text-white/90 text-lg">
-            <Link to="/" className="hover:text-[#FFD8A8] transition-colors">
+          <div className="flex items-center justify-center gap-2 font-extrabold text-purple-900 text-lg">
+            <Link to="/" className="hover:text-[#3d033a] transition-colors">
               Home
             </Link>
             <span>/</span>
-            <span className="text-[#FFD8A8]">About Us</span>
+            <span className="text-[#3b0645] font-extrabold">About Us</span>
           </div>
         </motion.div>
       </section>

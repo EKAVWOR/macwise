@@ -21,8 +21,8 @@ import {
 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import Navbar from '../component/Navbar';
-import lady from "../assets/IMG20230506111111.jpg.jpeg";
-import agent from "../assets/IMG-20230505-WA0065.jpg.jpeg";
+import agent from "../assets/IMG20230506111111.jpg.jpeg";
+import lady from "../assets/IMG-20230505-WA0065.jpg.jpeg";
 import NANTA from '../assets/NANTA.jpg';
 import NCAA from '../assets/NCAA.jpg';
 import NATOP from '../assets/NATOP.png';
@@ -30,7 +30,6 @@ import SKAL from '../assets/SKAL.jpg';
 
 
 const About = () => {
-  // ── Form State Management ──────────────────────────────────
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,42 +42,23 @@ const About = () => {
   const WHATSAPP_NUMBER = '2348052676836';
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
     if (!formData.name || !formData.email || !formData.subject) {
       alert('Please fill in all required fields');
       return;
     }
-
     setIsSubmitting(true);
-
-    const whatsappMessage = `*🌍 New Inquiry from Macwise Travels Website*
-
-*👤 Name:* ${formData.name}
-*📧 Email:* ${formData.email}
-*📝 Subject:* ${formData.subject}
-
-*💬 Message:*
-${formData.message || 'No additional message provided'}
-
----
-_Sent via Macwise Travels Contact Form_`;
-
+    const whatsappMessage = `*🌍 New Inquiry from Macwise Travels Website*\n\n*👤 Name:* ${formData.name}\n*📧 Email:* ${formData.email}\n*📝 Subject:* ${formData.subject}\n\n*💬 Message:*\n${formData.message || 'No additional message provided'}\n\n---\n_Sent via Macwise Travels Contact Form_`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-
     setTimeout(() => {
       setIsSubmitted(true);
       setIsSubmitting(false);
       window.open(whatsappUrl, '_blank');
-
       setTimeout(() => {
         setFormData({ name: '', email: '', subject: '', message: '' });
         setIsSubmitted(false);
@@ -86,7 +66,6 @@ _Sent via Macwise Travels Contact Form_`;
     }, 800);
   };
 
-  // ── Core Values Data ──────────────────────────────────────
   const coreValues = [
     {
       icon: Shield,
@@ -136,42 +115,52 @@ _Sent via Macwise Travels Contact Form_`;
     'National Association of Nigerian Travel Agencies (NANTA)',
     'Nigerian Civil Aviation Authority (NCAA)',
     'National Association of Tour Operators (NATOP)',
-    'SKAL'
+    'SKAL',
   ];
 
-  // ✅ NEW — Accreditation Logos
- const accreditationLogos = [
-  {
-    name: 'NANTA',
-    logo: NANTA,
-  },
-  {
-    name: 'NCAA',
-    logo: NCAA,
-  },
-  {
-    name: 'NATOP',
-    logo: NATOP,
-  },
-  {
-    name: 'SKAL',
-    logo: SKAL,
-  },
-];
+  // Using flagcdn.com for reliable flag images
+  const specialistCertifications = [
+    {
+      countryCode: 'ke',
+      country: 'Kenya',
+      label: 'Kenya Specialist Certified',
+    },
+    {
+      countryCode: 'za',
+      country: 'South Africa',
+      label: 'South Africa Specialist Certified',
+    },
+    {
+      countryCode: 'gb',
+      country: 'United Kingdom',
+      label: 'UK Specialist Certified',
+    },
+    {
+      countryCode: 'ca',
+      country: 'Canada',
+      label: 'Canada Specialist Certified',
+    },
+  ];
+
+  const accreditationLogos = [
+    { name: 'NANTA', logo: NANTA },
+    { name: 'NCAA', logo: NCAA },
+    { name: 'NATOP', logo: NATOP },
+    { name: 'SKAL', logo: SKAL },
+  ];
 
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* ── HERO BANNER ──────────────────────────────────────────── */}
+      {/* ── HERO BANNER ── */}
       <section
         style={{ backgroundImage: `url(${lady})` }}
         className="relative bg-cover bg-center h-[400px] md:h-[500px] mt-[120px] md:mt-[140px] flex items-center justify-center overflow-hidden"
       >
-        {/* <div className="absolute inset-0 bg-gradient-to-br from-[#7B2CBF]/80 via-[#1a0d2e]/70 to-[#FF8C42]/70"></div>
-        
+        <div className="absolute inset-0 bg-gradient-to-br from-[#7B2CBF]/80 via-[#1a0d2e]/70 to-[#FF8C42]/70"></div>
         <div className="absolute top-10 left-10 w-32 h-32 bg-[#FF8C42]/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-[#9D4EDD]/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div> */}
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-[#9D4EDD]/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -179,36 +168,35 @@ _Sent via Macwise Travels Contact Form_`;
           transition={{ duration: 0.8 }}
           className="relative z-10 text-center px-4"
         >
-          <span className="inline-block text-[#000000] font-bold text-sm tracking-[0.3em] uppercase mb-4">
-             Get to Know Us
+          <span className="inline-block text-white font-bold text-sm tracking-[0.3em] uppercase mb-4">
+            Get to Know Us
           </span>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-2xl">
             About Us
           </h1>
-          <div className="flex items-center justify-center gap-2 font-extrabold text-purple-900 text-lg">
-            <Link to="/" className="hover:text-[#3d033a] transition-colors">
-              Home
-            </Link>
+          <div className="flex items-center justify-center gap-2 font-extrabold text-yellow-200 text-lg">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-[#3b0645] font-extrabold">About Us</span>
+            <span className="text-[#fffec1] font-extrabold">About Us</span>
           </div>
         </motion.div>
       </section>
 
-      {/* ── COMPANY INTRO SECTION ────────────────────────────────── */}
+      {/* ── COMPANY INTRO SECTION ── */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-[#FFF5EE] relative overflow-hidden">
         <div className="absolute top-20 -left-32 w-96 h-96 bg-[#7B2CBF]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 -right-32 w-96 h-96 bg-[#FF8C42]/10 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto max-w-7xl px-4 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
             {/* Left: Image */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative lg:sticky lg:top-32"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
@@ -216,7 +204,14 @@ _Sent via Macwise Travels Contact Form_`;
                   alt="Macwise Travels Team"
                   className="w-full h-[500px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#7B2CBF]/40 to-transparent"></div>
+              </div>
+
+              <div className="relative mt-[5x] hidden md:block rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src={lady}
+                  alt="Macwise Travels Team"
+                  className="w-full h-[500px] object-cover"
+                />
               </div>
 
               <motion.div
@@ -232,11 +227,9 @@ _Sent via Macwise Travels Contact Form_`;
                   </div>
                   <div>
                     <p className="text-3xl font-bold bg-gradient-to-r from-[#7B2CBF] to-[#FF8C42] bg-clip-text text-transparent">
-                    9+
+                      9+
                     </p>
-                    <p className="text-gray-600 text-sm font-medium">
-                      Years of Excellence
-                    </p>
+                    <p className="text-gray-600 text-sm font-medium">Years of Excellence</p>
                   </div>
                 </div>
               </motion.div>
@@ -248,6 +241,7 @@ _Sent via Macwise Travels Contact Form_`;
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="pt-4 lg:pt-0"
             >
               <span className="inline-block text-[#FF6B1A] font-bold text-sm tracking-[0.3em] uppercase mb-4">
                 Who We Are
@@ -259,43 +253,51 @@ _Sent via Macwise Travels Contact Form_`;
                 </span>
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4 text-lg">
-                Macwise Travels & Tours Limited is a leading Travel Management
-                company, founded in <strong>2017</strong> and incorporated in{' '}
-                <strong>2024</strong>. We specialize in managing the travel needs
-                of NGOs, government agencies, multinational corporations, private
-                firms, and individuals.
+                Macwise Travels & Tours Limited is a leading Travel Management company, founded in{' '}
+                <strong>2017</strong> and incorporated in <strong>2024</strong>. We specialize in
+                managing the travel needs of NGOs, government agencies, multinational corporations,
+                private firms, and individuals.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Our services are designed to be high-quality, timely, and
-                client-focused, ensuring a seamless travel experience. Whether for
-                business or leisure, we help our clients make informed travel
-                decisions with ease and confidence.
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Our services are designed to be high-quality, timely, and client-focused, ensuring
+                a seamless travel experience. Whether for business or leisure, we help our clients
+                make informed travel decisions with ease and confidence.
               </p>
 
-              {/* Accreditations */}
-              <div className="bg-gradient-to-br from-[#7B2CBF]/5 to-[#FF8C42]/5 p-6 rounded-2xl border border-[#E0AAFF]/30">
-                <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                  <Shield size={18} className="text-[#7B2CBF]" />
-                  Our Accreditations
-                </h4>
-                <ul className="space-y-2 mb-6">
-                  {accreditations.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-700 text-sm">
-                      <CheckCircle2
-                        size={18}
-                        className="text-[#FF8C42] flex-shrink-0 mt-0.5"
-                      />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              {/* ── Accreditations Box ── */}
+              <div className="bg-gradient-to-br from-[#7B2CBF]/5 to-[#FF8C42]/5 rounded-2xl border border-[#E0AAFF]/30 overflow-hidden">
 
-                {/* ✅ NEW — Accreditation Logos */}
-                <div className="pt-5 border-t border-[#E0AAFF]/30">
-                  <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-4 text-center">
+                {/* Section 1: Accreditations */}
+                <div className="p-6 border-b border-[#E0AAFF]/30">
+                  <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2 text-base">
+                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#7B2CBF] to-[#9D4EDD] flex items-center justify-center flex-shrink-0">
+                      <Shield size={14} className="text-white" />
+                    </div>
+                    Our Accreditations
+                  </h4>
+                  <ul className="grid grid-cols-1 gap-2">
+                    {accreditations.map((item, i) => (
+                      <motion.li
+                        key={i}
+                        initial={{ opacity: 0, x: -15 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.08 }}
+                        className="flex items-center gap-3 text-gray-700 text-sm bg-white/60 rounded-xl px-4 py-2.5 border border-white"
+                      >
+                        <CheckCircle2 size={16} className="text-[#FF8C42] flex-shrink-0" />
+                        <span className="font-medium">{item}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Section 3: Accreditation Logos */}
+                <div className="p-6">
+                  <p className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-4 text-center">
                     Certified Member Of
                   </p>
-                  <div className="flex flex-wrap items-center justify-center gap-6">
+                  <div className="grid grid-cols-4 gap-3">
                     {accreditationLogos.map((agency, i) => (
                       <motion.div
                         key={i}
@@ -303,32 +305,78 @@ _Sent via Macwise Travels Contact Form_`;
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        whileHover={{ scale: 1.1, y: -3 }}
-                        className="bg-white p-3 rounded-xl shadow-sm hover:shadow-md transition-all border border-gray-100  hover:grayscale-0"
+                        whileHover={{ scale: 1.08, y: -3 }}
+                        className="bg-white rounded-xl p-3 shadow-sm hover:shadow-md transition-all border border-gray-100 flex flex-col items-center justify-center gap-2 aspect-square"
                       >
                         <img
                           src={agency.logo}
                           alt={agency.name}
-                          className="h-10 md:h-12 w-auto object-contain"
+                          className="h-8 md:h-10 w-auto object-contain"
                           onError={(e) => {
                             e.target.style.display = 'none';
-                            if (e.target.nextSibling) {
-                              e.target.nextSibling.style.display = 'flex';
-                            }
                           }}
                         />
-                        
+                        <span className="text-[9px] font-bold text-gray-400 uppercase tracking-wide text-center">
+                          {agency.name}
+                        </span>
                       </motion.div>
                     ))}
                   </div>
                 </div>
+
+                {/* Section 2: Specialist Certifications */}
+                <div className="p-6 border-b border-[#E0AAFF]/30">
+                  <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2 text-base">
+                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#FF8C42] to-[#FF6B1A] flex items-center justify-center flex-shrink-0">
+                      <Award size={14} className="text-white" />
+                    </div>
+                    Specialist Certifications
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {specialistCertifications.map((cert, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 }}
+                        whileHover={{ scale: 1.02, y: -2 }}
+                        className="flex items-center gap-3 bg-white/80 rounded-xl px-4 py-3 border border-white shadow-sm hover:shadow-md transition-all group"
+                      >
+                        {/* Flag image from flagcdn */}
+                        <div className="w-8 h-6 rounded overflow-hidden flex-shrink-0 shadow-sm border border-gray-100">
+                          <img
+                            src={`https://flagcdn.com/w40/${cert.countryCode}.png`}
+                            alt={cert.country}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              // Fallback to a colored div if flag fails to load
+                              e.target.style.display = 'none';
+                              e.target.parentElement.style.background = '#e5e7eb';
+                            }}
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-bold text-gray-900 truncate group-hover:text-[#7B2CBF] transition-colors">
+                            {cert.country}
+                          </p>
+                          <p className="text-[10px] text-gray-500 truncate">Specialist Certified</p>
+                        </div>
+                        <CheckCircle2 size={14} className="text-[#7B2CBF] flex-shrink-0" />
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                
+
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ── VISION & MISSION SECTION ─────────────────────────────── */}
+      {/* ── VISION & MISSION SECTION ── */}
       <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4">
           <motion.div
@@ -359,17 +407,15 @@ _Sent via Macwise Travels Contact Form_`;
             >
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#FF8C42]/20 rounded-full blur-2xl"></div>
-
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Eye className="text-white" size={32} />
                 </div>
                 <h3 className="text-3xl font-bold mb-4">Our Vision</h3>
                 <p className="text-white/90 leading-relaxed text-lg">
-                  To become a leading and trusted travel management company not
-                  just in Africa but Globally, recognized for delivering seamless,
-                  innovative, and customer-focused travel solutions that connect
-                  people and opportunities across the globe.
+                  To become a leading and trusted travel management company not just in Africa but
+                  Globally, recognized for delivering seamless, innovative, and customer-focused
+                  travel solutions that connect people and opportunities across the globe.
                 </p>
               </div>
             </motion.div>
@@ -384,18 +430,16 @@ _Sent via Macwise Travels Contact Form_`;
             >
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#7B2CBF]/20 rounded-full blur-2xl"></div>
-
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Target className="text-white" size={32} />
                 </div>
                 <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
                 <p className="text-white/90 leading-relaxed text-lg">
-                  To provide reliable, efficient, and personalized travel services
-                  that simplify every journey. We are committed to supporting our
-                  clients with expert visa advisory, seamless bookings, and
-                  exceptional customer service, while maintaining the highest
-                  standards of professionalism, integrity, and excellence.
+                  To provide reliable, efficient, and personalized travel services that simplify
+                  every journey. We are committed to supporting our clients with expert visa
+                  advisory, seamless bookings, and exceptional customer service, while maintaining
+                  the highest standards of professionalism, integrity, and excellence.
                 </p>
               </div>
             </motion.div>
@@ -403,7 +447,7 @@ _Sent via Macwise Travels Contact Form_`;
         </div>
       </section>
 
-      {/* ── CORE VALUES SECTION ──────────────────────────────────── */}
+      {/* ── CORE VALUES SECTION ── */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-[#FFF5EE] via-white to-[#FFF5EE] relative overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#7B2CBF]/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-[#FF8C42]/10 rounded-full blur-3xl"></div>
@@ -425,8 +469,8 @@ _Sent via Macwise Travels Contact Form_`;
               </span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              These principles guide every decision we make and every service we
-              deliver—shaping the Macwise experience.
+              These principles guide every decision we make and every service we deliver—shaping
+              the Macwise experience.
             </p>
           </motion.div>
 
@@ -446,23 +490,14 @@ _Sent via Macwise Travels Contact Form_`;
                   <div className="absolute top-4 right-4 text-6xl font-bold text-gray-100 group-hover:text-[#FF8C42]/20 transition-colors">
                     {String(index + 1).padStart(2, '0')}
                   </div>
-
-                  <div
-                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${value.gradient} flex items-center justify-center mb-4 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}
-                  >
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${value.gradient} flex items-center justify-center mb-4 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}>
                     <Icon className="text-white" size={26} />
                   </div>
-
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#7B2CBF] transition-colors">
                     {value.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed text-sm">
-                    {value.description}
-                  </p>
-
-                  <div
-                    className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${value.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
-                  ></div>
+                  <p className="text-gray-600 leading-relaxed text-sm">{value.description}</p>
+                  <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${value.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
                 </motion.div>
               );
             })}
@@ -470,10 +505,11 @@ _Sent via Macwise Travels Contact Form_`;
         </div>
       </section>
 
-      {/* ── CONTACT CTA SECTION ──────────────────────────────────── */}
+      {/* ── CONTACT CTA SECTION ── */}
       <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -481,7 +517,6 @@ _Sent via Macwise Travels Contact Form_`;
               className="bg-gradient-to-br from-[#7B2CBF] to-[#1a0d2e] rounded-3xl p-8 md:p-10 text-white relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF8C42]/20 rounded-full blur-3xl"></div>
-
               <div className="relative z-10">
                 <span className="inline-block text-[#FFD8A8] font-bold text-sm tracking-[0.3em] uppercase mb-4">
                   Reach Out
@@ -493,10 +528,8 @@ _Sent via Macwise Travels Contact Form_`;
                   </span>
                 </h3>
                 <p className="text-white/80 mb-8 leading-relaxed">
-                  Get in touch with our travel experts. We're here to help you
-                  every step of the way.
+                  Get in touch with our travel experts. We're here to help you every step of the way.
                 </p>
-
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF8C42] to-[#FF6B1A] flex items-center justify-center flex-shrink-0">
@@ -504,42 +537,27 @@ _Sent via Macwise Travels Contact Form_`;
                     </div>
                     <div>
                       <h4 className="font-bold text-lg mb-1">Our Office</h4>
-                      <p className="text-white/80 text-sm">
-                        Suite 304, 3rd floor MKK Plaza Jabi Abuja FCT, Nigeria
-                      </p>
+                      <p className="text-white/80 text-sm">Suite 304, 3rd floor MKK Plaza Jabi Abuja FCT, Nigeria</p>
                     </div>
                   </div>
-
-                  <a
-                    href="mailto:Macwiseltd@gmail.com"
-                    className="flex items-start gap-4 group"
-                  >
+                  <a href="mailto:macwisetravelsltd@gmail.com" className="flex items-start gap-4 group">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF8C42] to-[#FF6B1A] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                       <Mail className="text-white" size={22} />
                     </div>
                     <div>
                       <h4 className="font-bold text-lg mb-1">Email Us</h4>
-                      <p className="text-white/80 text-sm group-hover:text-[#FFD8A8] transition-colors">
-                        macwisetravelsltd@gmail.com
-                      </p>
+                      <p className="text-white/80 text-sm group-hover:text-[#FFD8A8] transition-colors">macwisetravelsltd@gmail.com</p>
                     </div>
                   </a>
-
-                  <a
-                    href="tel:+2349130593550"
-                    className="flex items-start gap-4 group"
-                  >
+                  <a href="tel:+2348052676836" className="flex items-start gap-4 group">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF8C42] to-[#FF6B1A] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                       <Phone className="text-white" size={22} />
                     </div>
                     <div>
                       <h4 className="font-bold text-lg mb-1">Call Us</h4>
-                      <p className="text-white/80 text-sm group-hover:text-[#FFD8A8] transition-colors">
-                        +234 805 267 6836
-                      </p>
+                      <p className="text-white/80 text-sm group-hover:text-[#FFD8A8] transition-colors">+234 805 267 6836</p>
                     </div>
                   </a>
-
                   <a
                     href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello Macwise Travels! I would like to inquire about your services.')}`}
                     target="_blank"
@@ -551,9 +569,7 @@ _Sent via Macwise Travels Contact Form_`;
                     </div>
                     <div>
                       <h4 className="font-bold text-lg mb-1">WhatsApp Us</h4>
-                      <p className="text-white/80 text-sm group-hover:text-[#FFD8A8] transition-colors">
-                        Chat with us instantly
-                      </p>
+                      <p className="text-white/80 text-sm group-hover:text-[#FFD8A8] transition-colors">Chat with us instantly</p>
                     </div>
                   </a>
                 </div>
@@ -567,9 +583,7 @@ _Sent via Macwise Travels Contact Form_`;
               className="bg-gradient-to-br from-[#FFF5EE] to-white rounded-3xl p-8 md:p-10 shadow-xl border border-[#E0AAFF]/30"
             >
               <div className="flex items-center gap-3 mb-2">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-                  Get In Touch
-                </h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Get In Touch</h3>
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] flex items-center justify-center shadow-md">
                   <FaWhatsapp className="text-white" size={20} />
                 </div>
@@ -594,7 +608,6 @@ _Sent via Macwise Travels Contact Form_`;
                     className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:outline-none focus:border-[#FF8C42] focus:ring-2 focus:ring-[#FF8C42]/20 transition-all"
                   />
                 </div>
-
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Your Email <span className="text-red-500">*</span>
@@ -609,7 +622,6 @@ _Sent via Macwise Travels Contact Form_`;
                     className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:outline-none focus:border-[#FF8C42] focus:ring-2 focus:ring-[#FF8C42]/20 transition-all"
                   />
                 </div>
-
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Subject <span className="text-red-500">*</span>
@@ -633,7 +645,6 @@ _Sent via Macwise Travels Contact Form_`;
                     <option value="Logistics">💬 Logistics</option>
                   </select>
                 </div>
-
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Your Message
@@ -660,20 +671,11 @@ _Sent via Macwise Travels Contact Form_`;
                   } ${isSubmitting || isSubmitted ? 'cursor-not-allowed opacity-90' : 'cursor-pointer'}`}
                 >
                   {isSubmitting ? (
-                    <>
-                      <Loader2 size={18} className="animate-spin" />
-                      Sending...
-                    </>
+                    <><Loader2 size={18} className="animate-spin" />Sending...</>
                   ) : isSubmitted ? (
-                    <>
-                      <CheckCircle2 size={20} />
-                      Opening WhatsApp...
-                    </>
+                    <><CheckCircle2 size={20} />Opening WhatsApp...</>
                   ) : (
-                    <>
-                      <FaWhatsapp size={20} />
-                      Send via WhatsApp
-                    </>
+                    <><FaWhatsapp size={20} />Send via WhatsApp</>
                   )}
                 </motion.button>
 
@@ -687,13 +689,12 @@ _Sent via Macwise Travels Contact Form_`;
         </div>
       </section>
 
-      {/* ── BOTTOM CTA ───────────────────────────────────────────── */}
+      {/* ── BOTTOM CTA ── */}
       <section className="py-16 bg-gradient-to-r from-[#7B2CBF] via-[#9D4EDD] to-[#FF8C42] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
         </div>
-
         <div className="container mx-auto max-w-7xl px-4 relative text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -704,8 +705,7 @@ _Sent via Macwise Travels Contact Form_`;
               Ready to Start Your Journey?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Join hundreds of satisfied clients who trust Macwise Travels for
-              their travel needs.
+              Join hundreds of satisfied clients who trust Macwise Travels for their travel needs.
             </p>
             <Link to="/packages">
               <motion.button
